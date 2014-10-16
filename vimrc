@@ -28,18 +28,19 @@ set laststatus=2
 " plugin - Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'itchyny/landscape.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'itchyny/landscape.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
 
+call vundle#end()
 filetype plugin indent on
 
 " plugin - NERDTree
