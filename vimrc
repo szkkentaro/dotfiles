@@ -1,7 +1,6 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-colorscheme landscape
 set t_Co=256
 
 set grepprg=grep\ -nH
@@ -55,6 +54,9 @@ Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" colorscheme
+colorscheme landscape
 
 " syntax
 syntax on
