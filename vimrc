@@ -56,7 +56,7 @@ call vundle#end()
 filetype plugin indent on
 
 " colorscheme
-colorscheme landscape
+silent! colorscheme landscape
 
 " syntax
 syntax on
