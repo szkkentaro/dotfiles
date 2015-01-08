@@ -30,9 +30,13 @@ set completeopt=menuone,preview
 
 " golang
 set runtimepath+=$GOROOT/misc/vim
-autocmd BufWritePre *.go Fmt
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-autocmd BufWritePost *.go call system("/usr/local/bin/ctags -aR -f ~/.tags")
+set runtimepath+=$GOPATH/src/github.com/golang/lint/misc/vim
+augroup Go
+  autocmd!
+  autocmd BufWritePre *.go Fmt
+  autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+  autocmd BufWritePost *.go call system("/usr/local/bin/ctags -aR -f ~/.tags")
+augroup END
 set tags=~/.tags
 
 " plugin - Vundle
