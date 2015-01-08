@@ -6,9 +6,15 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-alias l.='ls -dG .*'
-alias ll='ls -lGh'
-alias ls='ls -G'
+if   [ -e /etc/debian_version ] ||
+     [ -e /etc/debian_release ]; then
+     alias ls='ls --color'
+elif [ -e /etc/fedora-release ] ||
+     [ -e /etc/redhat-release ]; then
+     alias ls='ls -G'
+fi
+alias l.='ls -d .*'
+alias ll='ls -lh'
 alias vi='vim'
 alias which='which -a'
 
