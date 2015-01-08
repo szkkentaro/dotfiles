@@ -19,6 +19,7 @@ set list
 set listchars=tab:>-,trail:-
 set backspace=indent,eol,start
 set wildmenu
+set wildmode=list:full
 
 set hlsearch
 nnoremap <C-L> :nohl<CR><C-L>
