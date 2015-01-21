@@ -76,8 +76,8 @@ let g:airline_powerline_fonts=1
 let g:EasyMotion_keys='awsedf;olikj'
 let g:EasyMotion_smartcase=1
 let g:EasyMotion_use_migemo=1
-nmap s <Plug>(easymotion-s)
-vmap s <Plug>(easymotion-s)
+nmap # <Plug>(easymotion-s)
+vmap # <Plug>(easymotion-s)
 nmap <C-j> <Plug>(easymotion-sol-j)
 nmap <C-k> <Plug>(easymotion-sol-k)
 
