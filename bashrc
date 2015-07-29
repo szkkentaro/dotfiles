@@ -10,9 +10,11 @@ if   [ -e /etc/debian_version ] ||
      [ -e /etc/debian_release ]; then
      alias ls='ls --color'
 elif [ -e /etc/fedora-release ] ||
-     [ -e /etc/redhat-release ]; then
+     [ -e /etc/redhat-release ] ||
+     [ -e /usr/bin/sw_vers ]; then
      alias ls='ls -G'
 fi
+
 alias l.='ls -d .*'
 alias ll='ls -lh'
 alias vi='vim'
