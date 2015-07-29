@@ -11,8 +11,7 @@ do
   if [ -e $HOME/.$FILE ]; then
     mv $HOME/.$FILE{,.`date +%Y%m%d%H%M%S`}
   fi
-  CMD="ln -s $DOTFILES/$FILE $HOME/.$FILE"
-  tee $CMD
+  ln -s $DOTFILES/$FILE $HOME/.$FILE
 done
 
 # Download .Vundle
