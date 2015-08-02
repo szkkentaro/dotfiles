@@ -27,17 +27,6 @@ set laststatus=2
 
 set completeopt=menuone,preview
 
-" golang
-set runtimepath+=$GOROOT/misc/vim
-set runtimepath+=$GOPATH/src/github.com/golang/lint/misc/vim
-augroup Go
-  autocmd!
-  autocmd BufWritePre *.go Fmt
-  autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-  autocmd BufWritePost *.go call system("/usr/local/bin/ctags -aR -f ~/.tags")
-augroup END
-set tags=~/.tags
-
 " plugin - Vundle
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
@@ -53,9 +42,9 @@ Plugin 'itchyny/landscape.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'nsf/gocode', {'runtimepath': 'vim/'}
-Plugin 'golang/lint', {'runtimepath': 'misc/vim/'}
 Plugin 'thinca/vim-quickrun'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -81,12 +70,25 @@ vmap # <Plug>(easymotion-s)
 nmap <C-j> <Plug>(easymotion-sol-j)
 nmap <C-k> <Plug>(easymotion-sol-k)
 
-" plugin - quickrun
-nnoremap <Space>qq :<C-u>QuickRun<CR>
-let g:quickrun_config = {}
-let g:quickrun_config._ = {'runner': 'vimproc'}
-let g:quickrun_config['go.test'] = {'exec': 'go test -v'}
-augroup GoTest
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *_test.go set filetype=go.test
-augroup END
+" plugin - thinca/vim-quickrun
+"nnoremap <Space>qq :<C-u>QuickRun<CR>
+"let g:quickrun_config = {}
+"let g:quickrun_config._ = {'runner': 'vimproc'}
+"let g:quickrun_config['go.test'] = {'exec': 'go test -v'}
+"augroup GoTest
+"   autocmd!
+"   autocmd BufWinEnter,BufNewFile *_test.go set filetype=go.test
+"augroup END
+
+" plugin - fatih/vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)

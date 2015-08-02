@@ -23,6 +23,7 @@ git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 # Vim PluginInstall
 vim +PluginInstall +qall
 vim +VimProcInstall +qall
+vim +GoInstallBinaries +qall
 
 # Vim Colors
 mkdir -p ~/.vim/colors
