@@ -8,7 +8,7 @@ set helplang=ja
 
 set number
 set colorcolumn=80
-highlight ColorColumn ctermbg=red
+au ColorScheme * highlight ColorColumn ctermbg=red
 set cursorline
 
 set expandtab tabstop=2 shiftwidth=2 shiftwidth=2
