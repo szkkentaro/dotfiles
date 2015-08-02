@@ -14,9 +14,9 @@ do
   ln -s $DOTFILES/$FILE $HOME/.$FILE
 done
 
-# Download .Vundle
-git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
+# Download Vundle
+git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 # Vim PluginInstall
 vim +PluginInstall +qall
