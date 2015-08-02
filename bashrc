@@ -27,3 +27,7 @@ HISTIGNORE=ls:ll:l.:history
 
 # grep
 export GREP_OPTIONS='--color=auto --exclude-dir=.git'
+
+# golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
