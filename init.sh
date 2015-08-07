@@ -32,5 +32,5 @@ mkdir -p ~/.vim/colors
 ln -s ~/.vim/bundle/landscape.vim/colors/landscape.vim ~/.vim/colors/landscape.vim
 
 # Install Powerline
-brew tap sanemat/font
-brew reinstall --powerline --vim-powerline ricty
+# brew tap sanemat/font
+# brew reinstall --powerline --vim-powerline ricty
