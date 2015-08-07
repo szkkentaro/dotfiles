@@ -21,9 +21,9 @@ brew reinstall vim --with-lua
 git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 # Vim PluginInstall
-vim +PluginInstall +qall
-vim +VimProcInstall +qall
-vim +GoInstallBinaries +qall
+echo "+PluginInstall +qall" | xargs sh -c '/usr/local/bin/vim "$@" < /dev/tty' -
+echo "+VimProcInstall +qall" | xargs sh -c '/usr/local/bin/vim "$@" < /dev/tty' -
+echo "+GoInstallBinaries +qall" | xargs sh -c '/usr/local/bin/vim "$@" < /dev/tty' -
 
 # Vim Colors
 mkdir -p ~/.vim/colors
