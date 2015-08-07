@@ -31,6 +31,10 @@ mkdir -p ~/.vim/colors
 # Vim Color Scheme
 ln -s ~/.vim/bundle/landscape.vim/colors/landscape.vim ~/.vim/colors/landscape.vim
 
+# Setup git USER
+git config --global user.name "$USER_NAME"
+git config --global user.email "$USER_EMAIL"
+
 # Install Powerline
 # brew tap sanemat/font
 # brew reinstall --powerline --vim-powerline ricty
