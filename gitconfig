@@ -3,7 +3,8 @@
 [core]
 	editor = vim
 [alias]
-    c = commit -v
-    b = branch
-    s = status
-    a = add
+	c = commit -v
+	b = branch
+	s = status
+	a = add
+	l = log -5
