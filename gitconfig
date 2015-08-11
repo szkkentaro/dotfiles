@@ -7,4 +7,4 @@
 	b = branch
 	s = status
 	a = add
-	l = log -5
+	l = log -5 --name-status
