@@ -70,8 +70,6 @@ let g:EasyMotion_smartcase=1
 let g:EasyMotion_use_migemo=1
 nmap # <Plug>(easymotion-s)
 vmap # <Plug>(easymotion-s)
-nmap <C-j> <Plug>(easymotion-sol-j)
-nmap <C-k> <Plug>(easymotion-sol-k)
 
 " plugin - thinca/vim-quickrun
 "nnoremap <Space>qq :<C-u>QuickRun<CR>
