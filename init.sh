@@ -29,7 +29,8 @@ echo "+GoInstallBinaries +qall" | xargs sh -c '/usr/local/bin/vim "$@" < /dev/tt
 mkdir -p ~/.vim/colors
 
 # Vim Color Scheme
-ln -s ~/.vim/bundle/landscape.vim/colors/landscape.vim ~/.vim/colors/landscape.vim
+COLORSCHEME=landscape.vim
+ln -s ~/.vim/bundle/$COLORSCHEME/colors/$COLORSCHEME ~/.vim/colors/$COLORSCHEME
 
 # Setup git USER
 git config --global user.name "$USER_NAME"
