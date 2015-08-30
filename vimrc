@@ -112,3 +112,9 @@ let g:neosnippet#snippets_directory = '~/.vim/snippet'
 imap <C-k>  <Plug>(neosnippet_expand_or_jump)
 smap <C-k>  <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>  <Plug>(neosnippet_expand_target)
+
+" pretty format
+augroup prettyFormat
+  au!
+  au FileType json nnoremap <Space>pp :<C-u>%!python -m json.tool<CR>
+augroup END
