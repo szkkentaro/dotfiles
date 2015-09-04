@@ -40,6 +40,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'itchyny/landscape.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'nsf/gocode', {'runtimepath': 'vim/'}
 Plugin 'thinca/vim-quickrun'
@@ -60,6 +61,7 @@ syntax on
 
 " plugin - NERDTree
 nnoremap <Space>n :<C-u>NERDTreeToggle<CR>
+" plugin - NERDCommenter
 
 " plugin - airline
 let g:airline_powerline_fonts=1
@@ -93,6 +95,8 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>l <Plug>(go-lint)
+autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
 
 " plugin - Shougo/neocomplete
 let g:acp_enableAtStartup = 0
