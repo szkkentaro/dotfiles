@@ -5,7 +5,7 @@ DOTFILES=$HOME/.dotfiles
 git clone https://github.com/szkkentaro/dotfiles.git $DOTFILES
 
 # Expand dotfiles
-FILE_LIST=("bashrc" "bash_profile" "gitconfig" "vimrc")
+FILE_LIST=("bashrc" "bashrc.local" "bash_profile" "gitconfig" "vimrc" "gitconfig.local")
 for FILE in ${FILE_LIST[@]}
 do
   if [ -e $HOME/.$FILE ]; then
@@ -33,8 +33,8 @@ COLORSCHEME=landscape.vim
 ln -s ~/.vim/bundle/$COLORSCHEME/colors/$COLORSCHEME ~/.vim/colors/$COLORSCHEME
 
 # Setup git USER
-git config --global user.name "$USER_NAME"
-git config --global user.email "$USER_EMAIL"
+git config -f $HOME/.gitconfig.local user.name "$USER_NAME"
+git config -f $HOME/.gitconfig.local user.email "$USER_EMAIL"
 
 # Install Powerline
 # brew tap sanemat/font
