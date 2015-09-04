@@ -8,3 +8,5 @@
 	s = status
 	a = add
 	l = log -5 --name-status
+[include]
+  path = ~/.gitconfig.local
