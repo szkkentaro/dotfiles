@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+# Source local definitions
+if [ -f /etc/bashrc ]; then
+  . $HOME/.bashrc.local
+fi
+
 # User specific aliases and functions
 if   [ -e /etc/debian_version ] ||
      [ -e /etc/debian_release ]; then
