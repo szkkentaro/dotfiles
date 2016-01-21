@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+# Source local definitions
+if [ -f /etc/bashrc ]; then
+  . $HOME/.bashrc.local
+fi
+
 # User specific aliases and functions
 if   [ -e /etc/debian_version ] ||
      [ -e /etc/debian_release ]; then
@@ -27,3 +32,7 @@ HISTIGNORE=ls:ll:l.:history
 
 # grep
 export GREP_OPTIONS='--color=auto --exclude-dir=.git'
+
+# golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin

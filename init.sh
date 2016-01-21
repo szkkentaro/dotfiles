@@ -5,27 +5,37 @@ DOTFILES=$HOME/.dotfiles
 git clone https://github.com/szkkentaro/dotfiles.git $DOTFILES
 
 # Expand dotfiles
-FILE_LIST=("bashrc" "bash_profile" "gitconfig" "vimrc")
+FILE_LIST=("bashrc" "bashrc.local" "bash_profile" "gitconfig" "vimrc" "gitconfig.local")
 for FILE in ${FILE_LIST[@]}
 do
   if [ -e $HOME/.$FILE ]; then
     mv $HOME/.$FILE{,.`date +%Y%m%d%H%M%S`}
   fi
-  CMD="ln -s $DOTFILES/$FILE $HOME/.$FILE"
-  tee $CMD
+  ln -s $DOTFILES/$FILE $HOME/.$FILE
 done
 
-# Download .Vundle
+# Install vim
+brew reinstall vim --with-lua
+
+# Download Vundle
 git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
-# Download Powerline.otf
-curl -sL 'https://github.com/Lokaltog/powerline-fonts/blob/master/DroidSansMono/Droid%20Sans%20Mono%20for%20Powerline.otf?raw=true' -o ~/Library/Fonts/Droid\ Sans\ Mono\ for\ Powerline.otf
-
 # Vim PluginInstall
-vim +PluginInstall +qall
+echo "+PluginInstall +qall" | xargs sh -c '/usr/local/bin/vim "$@" < /dev/tty' -
+echo "+VimProcInstall +qall" | xargs sh -c '/usr/local/bin/vim "$@" < /dev/tty' -
+echo "+GoInstallBinaries +qall" | xargs sh -c '/usr/local/bin/vim "$@" < /dev/tty' -
 
 # Vim Colors
 mkdir -p ~/.vim/colors
 
 # Vim Color Scheme
-ln -s ~/.vim/bundle/landscape.vim/colors/landscape.vim ~/.vim/colors/landscape.vim
+COLORSCHEME=landscape.vim
+ln -s ~/.vim/bundle/$COLORSCHEME/colors/$COLORSCHEME ~/.vim/colors/$COLORSCHEME
+
+# Setup git USER
+git config -f $HOME/.gitconfig.local user.name "$USER_NAME"
+git config -f $HOME/.gitconfig.local user.email "$USER_EMAIL"
+
+# Install Powerline
+# brew tap sanemat/font
+# brew reinstall --powerline --vim-powerline ricty
