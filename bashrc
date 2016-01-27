@@ -36,3 +36,6 @@ export GREP_OPTIONS='--color=auto --exclude-dir=.git'
 # golang
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# ghq
+export GHQ_ROOT=$HOME/src
