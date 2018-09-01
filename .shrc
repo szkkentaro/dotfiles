@@ -1,2 +1,0 @@
-alias ls="ls -G"
-alias grep="grep --color --exclude-dir=.git"

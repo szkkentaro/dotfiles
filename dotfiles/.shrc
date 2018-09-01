@@ -1,0 +1,15 @@
+# alias
+alias ls="ls -G"
+alias grep="grep --color --exclude-dir=.git"
+
+# completion files
+files=$(find /usr/local/etc/bash_completion.d -not -type d)
+for file in ${files}; do
+  source ${file}
+done
+
+# Google Cloud SDK
+source /Users/suzukik/Downloads/google-cloud-sdk/completion.bash.inc
+
+# nvm
+source /usr/local/opt/nvm/nvm.sh
