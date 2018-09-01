@@ -1,5 +1,5 @@
 # gcloug
-.config/gcloud
+dotfiles/.config/gcloud
 
 # npm
-.config/configstore
+dotfiles/.config/configstore
