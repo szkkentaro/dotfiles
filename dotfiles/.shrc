@@ -1,5 +1,6 @@
 # alias
 alias ls="ls -G"
+alias ll="ls -alF"
 alias grep="grep --color --exclude-dir=.git"
 
 # completion files
